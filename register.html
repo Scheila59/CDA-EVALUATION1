@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Inscription</title>
+  </head>
+  <body>
+    <h1>Inscris-toi si tu veux savoir mon film préféré</h1>
+    <form action="login.html" method="post">
+      <label for="name">Nom</label>
+      <input type="text" id="nameRegister" name="name" required />
+      <label for="password">Mot de passe</label>
+      <input type="password" id="passwordRegister" name="password" required />
+      <label for="password">Confirmation mot de passe</label>
+      <input type="password" id="passwordConfirm" name="password" required />
+      <button type="submit">S'inscrire</button>
+    </form>
+    <p>Déjà inscrit ? <a href="login.html">Connecte-toi</a></p>
+  </body>
+</html>
