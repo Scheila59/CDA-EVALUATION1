@@ -1,12 +1,12 @@
 * {
   margin: 0;
-  padding: 2%;
+  padding: 0;
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  background: #d8cea7;
+  /* background: #d8cea7; */
   background: radial-gradient(
     circle,
     rgba(216, 206, 167, 1) 0%,
@@ -15,7 +15,6 @@ body {
     rgba(194, 66, 41, 1) 78%,
     rgba(131, 26, 25, 1) 100%
   );
-  /* background-size: cover; */
   background-repeat: no-repeat;
 }
 
@@ -99,22 +98,47 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 #gridAffiche {
-  display: grid;
-  grid-template-areas:
-    "affiche synopsis"
-    "affiche synopsis";
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 5%;
-  justify-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #affiche {
-  grid-area: affiche;
+  width: 80%;
+  height: auto;
+  justify-content: center;
   border: 3px solid black;
+  margin-bottom: 5%;
 }
-#synopsis {
-  width: 50%;
-  grid-area: synopsis;
-  grid-area: affiche / synopsis;
-  gap: 10px;
+h2 {
+  font-family: "Agu Display", serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 5% 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#synopsis p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5% 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+hr {
+  width: 80%;
+  border: 1px solid black;
+  margin: 5% auto;
+}
+h3 {
+  font-family: "Agu Display", serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 5% 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+iframe {
+  border-style: none;
+  width: 90%;
+  margin: 5% 5%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }

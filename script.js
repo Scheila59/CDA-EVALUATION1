@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-// ----------------Fonctionnalité is loggedIn---------------------
 
 // ---------------------Fonctionnalité register---------------------
 function registerUser() {
