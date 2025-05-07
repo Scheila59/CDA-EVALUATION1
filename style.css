@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 2%;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: #d8cea7;
+  background: radial-gradient(
+    circle,
+    rgba(216, 206, 167, 1) 0%,
+    rgba(238, 180, 64, 1) 23%,
+    rgba(221, 132, 55, 1) 55%,
+    rgba(194, 66, 41, 1) 78%,
+    rgba(131, 26, 25, 1) 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #8b4513;
+  border-radius: 10px;
+  font-family: "Agu Display", serif;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet au survol */
+input:hover {
+  border-color: #d2691e;
+  background-color: #fff8dc;
+}
+
+/* Effet au focus */
+input:focus {
+  outline: none; /* Supprime le contour par défaut */
+  border-color: #ff8c00;
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+/* Style pour les bouton */
+#btnRegister,
+#btnLogin {
+  margin-top: 5%;
+  width: 50%;
+  padding: 10px;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+#btnRegister:hover,
+#btnLogin:hover {
+  background-color: #ff8c00; /* Couleur plus vive */
+}
+h1 {
+  font-family: "Lion kinG", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-top: 2%;
+}
+
+#register-form,
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Agu Display", serif;
+  font-weight: 600;
+  font-size: larger;
+  border-radius: 25%;
+  border: 2px solid black;
+  padding: 5%;
+}
+.paragraph {
+  font-family: "Agu Display", serif;
+  font-weight: 700;
+  font-size: larger;
+  text-align: center;
+  margin-top: 5%;
+}
