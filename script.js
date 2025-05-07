@@ -17,13 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 // ----------------Fonctionnalité is loggedIn---------------------
-// verification de l'état de connexion
-
-document.addEventListener("DOMContentLoaded") {
-    if (window.location.pathname = "home.html" && localStorage.getItem("islogged") === false || null) {
-      alert("Vous devez vous connecter pour voir cette page !");
-  }
-}
 
 // ---------------------Fonctionnalité register---------------------
 function registerUser() {
@@ -63,16 +56,13 @@ function loginUser() {
 
   // Vérification des données
 
-//   if (loginName === storedName && passwordLogin === storedPassword) {
-//     alert("Connexion réussie ! Bienvenue " + loginName + " !");
-//     // met à jour le statut de connexion
-//     localStorage.setItem("islogged", "true");
-//     let islogged = true;
-//     // Redirection vers la page d'accueil
-//     window.location.href = "home.html";
-//   } else {
-//     alert("Nom d'utilisateur ou mot de passe incorrect !");
-//   }
-// }
-
-
+  if (loginName === storedName && passwordLogin === storedPassword) {
+    alert("Connexion réussie ! Bienvenue " + loginName + " !");
+    // met à jour le statut de connexion
+    localStorage.setItem("islogged", "true");
+    // Redirection vers la page d'accueil
+    window.location.href = "home.html";
+  } else {
+    alert("Nom d'utilisateur ou mot de passe incorrect !");
+  }
+}

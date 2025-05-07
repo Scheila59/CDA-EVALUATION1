@@ -3,29 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // verification de l'état de connexion
+      if (
+        window.location.pathname.includes("home.html") &&
+        localStorage.getItem("islogged") !== "true"
+      ) {
+        alert("Vous devez vous connecter pour voir cette page !");
+        window.location.href = "login.html";
+      }
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Le roi lion</title>
   </head>
   <body>
     <header>
-      <h1>Le roi lion</h1>
-      <img src="/img/afficheFilm.webp" alt="image des animaux de la savane" />
+      <h1 id="title">Le roi lion</h1>
     </header>
     <main>
-      <h2>Synopsis</h2>
-      <p>
-        Au fond de la savane africaine, tous les animaux célèbrent la naissance
-        de Simba, leur futur roi. Les mois passent. Simba idolâtre son père, le
-        roi Mufasa, qui prend à cœur de lui faire comprendre les enjeux de sa
-        royale destinée. Mais tout le monde ne semble pas de cet avis. Scar, le
-        frère de Mufasa, l'ancien héritier du trône, a ses propres plans. La
-        bataille pour la prise de contrôle de la Terre des Lions est ravagée par
-        la trahison, la tragédie et le drame, ce qui finit par entraîner l'exil
-        de Simba. Avec l'aide de deux nouveaux amis, Timon et Pumbaa, le jeune
-        lion va devoir trouver comment grandir et reprendre ce qui lui revient
-        de droit…
-      </p>
+      <container id="gridAffiche">
+        <img id="affiche" src="/img/afficheFilm.webp" alt="affiche du film" />
+        <div id="synopsis">
+          <h2>Synopsis</h2>
+          <p>
+            Au fond de la savane africaine, tous les animaux célèbrent la
+            naissance de Simba, leur futur roi. Les mois passent. Simba idolâtre
+            son père, le roi Mufasa, qui prend à cœur de lui faire comprendre
+            les enjeux de sa royale destinée. Mais tout le monde ne semble pas
+            de cet avis. Scar, le frère de Mufasa, l'ancien héritier du trône, a
+            ses propres plans. La bataille pour la prise de contrôle de la Terre
+            des Lions est ravagée par la trahison, la tragédie et le drame, ce
+            qui finit par entraîner l'exil de Simba. Avec l'aide de deux
+            nouveaux amis, Timon et Pumbaa, le jeune lion va devoir trouver
+            comment grandir et reprendre ce qui lui revient de droit…
+          </p>
+        </div>
+      </container>
       <h3>Bande annonce</h3>
       <iframe
         width="560"

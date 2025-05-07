@@ -5,6 +5,7 @@
 }
 body {
   height: 100vh;
+  width: 100vw;
   background: #d8cea7;
   background: radial-gradient(
     circle,
@@ -14,7 +15,7 @@ body {
     rgba(194, 66, 41, 1) 78%,
     rgba(131, 26, 25, 1) 100%
   );
-  background-size: cover;
+  /* background-size: cover; */
   background-repeat: no-repeat;
 }
 
@@ -83,10 +84,37 @@ h1 {
   border: 2px solid black;
   padding: 5%;
 }
-.paragraph {
+.pLogin {
   font-family: "Agu Display", serif;
   font-weight: 700;
   font-size: larger;
   text-align: center;
   margin-top: 5%;
+}
+#title {
+  font-family: "Lion kinG", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#gridAffiche {
+  display: grid;
+  grid-template-areas:
+    "affiche synopsis"
+    "affiche synopsis";
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 5%;
+  justify-items: center;
+}
+#affiche {
+  grid-area: affiche;
+  border: 3px solid black;
+}
+#synopsis {
+  width: 50%;
+  grid-area: synopsis;
+  grid-area: affiche / synopsis;
+  gap: 10px;
 }
