@@ -14,6 +14,7 @@
       }
     </script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css">
     <link href="https://fonts.cdnfonts.com/css/lion-king" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +22,13 @@
       href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Tagesschrift&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <!-- <script> Splitting(); </script> -->
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <title>Le roi lion</title>
   </head>
   <body>
@@ -33,7 +40,7 @@
         <img id="affiche" src="/img/afficheFilm.webp" alt="affiche du film" />
         <div id="synopsis">
           <h2>Synopsis</h2>
-          <p>
+          <p data-splitting class="text-reveal1">
             Au fond de la savane africaine, tous les animaux célèbrent la
             naissance de Simba, leur futur roi. Les mois passent. Simba idolâtre
             son père, le roi Mufasa, qui prend à cœur de lui faire comprendre
@@ -44,7 +51,7 @@
             qui finit par entraîner l'exil de Simba. Avec l'aide de deux
             nouveaux amis, Timon et Pumbaa, le jeune lion va devoir trouver
             comment grandir et reprendre ce qui lui revient de droit…
-          </p>
+          </p>          
         </div>
       </container>
       <hr />
@@ -56,20 +63,68 @@
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-
-      <h3>Acteurs</h3>
-      <ul>
-        <li>Simba</li>
-        <li>Nala</li>
-        <li>Mufasa</li>
-        <li>Zazu</li>
-        <li>Timon et pumba</li>
-        <li>Rafiki</li>
-        <li>Scar</li>
-        <li>Banzai, Jenzi et Ed</li>
-      </ul>
-      <h2>Pourquoi ce film préféré ?</h2>
-      <p>Ici écrire pourquoi c’est mon film préféré</p>
+      <section class="sectionActeurs">
+        <h3>Acteurs</h3>
+        <ul>
+          <li>Simba <img src="/img/Simba.webp" alt="Simba" /></li>
+          <li>Nala <img src="/img/Nala.webp" alt="Nala" /></li>
+          <li>Mufasa <img src="/img/Mufasa.webp" alt="Mufasa" /></li>
+          <li>Zazu <img src="/img/zazu2.webp" alt="Zazu" /></li>
+          <li>
+            Timon et pumba <img src="/img/timon-and-pumbaa.webp" alt="Timon" />
+          </li>
+          <li>Rafiki <img src="/img/Rafiki.webp" alt="Rafiki" /></li>
+          <li>Scar <img src="/img/scar-1-the_lion_king.webp" alt="Scar" /></li>
+          <li>
+            Banzai, Jenzi et Ed
+            <img src="/img/les-hyenes.webp" alt="Les hyènes" />
+          </li>
+        </ul>
+      </section>
+      <hr />
+      <section class="pourquoi">
+        <h2>Pourquoi ce film préféré ?</h2>
+        <p data-splitting class="text-reveal2">
+          Depuis mon enfance, Le Roi Lion occupe une place spéciale dans mon
+          cœur. Ce chef-d'œuvre de Disney n'est pas seulement une histoire
+          captivante, mais une véritable ode à l'amour, au courage et à
+          l'amitié. <br> <br> Dès les premières notes des musiques inoubliables, j'étais
+          transportée dans l'univers de la Terre des Lions. Les chansons
+          rythmaient mon enfance, m'apportant joie et émerveillement. Elles sont
+          encore aujourd'hui gravées en moi, évoquant un sentiment de nostalgie
+          et de bonheur.<br> <br> La relation entre Simba et Mufasa m'a profondément
+          marquée. L'amour et la sagesse que ce père transmet à son fils
+          résonnent encore en moi. La perte tragique de Mufasa fut une des
+          scènes les plus bouleversantes de mon enfance. À cet instant, j'ai
+          ressenti une douleur indescriptible face à cette injustice.
+          Aujourd’hui, étant adulte, cette scène me touche encore plus
+          intensément, notamment parce que j’ai vécu la perte soudaine de mon
+          propre père. Ce passage du film, au-delà de sa tristesse, me rappelle
+          la force des souvenirs et l’importance des leçons qu’un père peut
+          laisser derrière lui.<br> <br> Mais Le Roi Lion n'est pas seulement une
+          histoire tragique. Il est aussi rempli d'humour et de personnages
+          attachants. Zazu, avec son côté coincé et ses répliques mémorables,
+          m'a toujours fait rire. Les hyènes, à la fois terrifiantes et
+          hilarantes, apportaient une dynamique unique au film. Et bien sûr,
+          Timon et Pumba… Leur insouciance et leur joie de vivre étaient un
+          véritable rayon de soleil ! Leur amitié indéfectible avec Simba me
+          touchait profondément, car elle représente le soutien inconditionnel
+          et l'amour sincère que l'on trouve auprès de ceux qui nous aiment
+          vraiment.<br> <br> Enfin, comment ne pas admirer la force et le courage de Nala
+          ? Elle incarne une héroïne inspirante, déterminée et prête à affronter
+          l’adversité pour protéger ceux qu’elle aime. <br> <br> Ainsi, Le Roi Lion n’est
+          pas qu’un simple film d’animation. Il est une véritable leçon de vie,
+          un condensé d’émotions, un rappel que même après les épreuves les plus
+          difficiles, la vie continue et qu'il faut trouver la force de se
+          relever. C'est pour toutes ces raisons que ce film restera à jamais
+          mon préféré
+        </p>    
+            
+      </section>
     </main>
+    <hr />
+    <footer>
+      <p>© 2025 - Mon film préféré par Laura Beaugrand</p>
+      <button id="btnLogout">Se déconnecter</button>
   </body>
 </html>

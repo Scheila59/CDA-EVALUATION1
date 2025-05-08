@@ -5,8 +5,9 @@
 }
 body {
   height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   width: 100vw;
-  /* background: #d8cea7; */
   background: radial-gradient(
     circle,
     rgba(216, 206, 167, 1) 0%,
@@ -44,7 +45,8 @@ input:focus {
 
 /* Style pour les bouton */
 #btnRegister,
-#btnLogin {
+#btnLogin,
+#btnLogout {
   margin-top: 5%;
   width: 50%;
   padding: 10px;
@@ -59,7 +61,8 @@ input:focus {
 
 /* Effet au survol du bouton */
 #btnRegister:hover,
-#btnLogin:hover {
+#btnLogin:hover,
+#btnLogout:hover {
   background-color: #ff8c00; /* Couleur plus vive */
 }
 h1 {
@@ -117,7 +120,8 @@ h2 {
   margin: 5% 5%;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-#synopsis p {
+#synopsis p,
+.pourquoi p {
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
   text-align: center;
@@ -137,8 +141,48 @@ h3 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 iframe {
-  border-style: none;
+  border: black double 5px;
+  /* border-style: none; */
   width: 90%;
   margin: 5% 5%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.sectionActeurs li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ul {
+  font-family: "Agu Display", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 10px;
+  width: 100%;
+}
+li img {
+  border-radius: 60%;
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ea7a2a;
+  color: white;
+}
+footer p {
+  text-align: center;
+  font-family: "Agu Display", serif;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px;
+}
+footer #btnLogout {
+  border: black solid 2px;
 }
