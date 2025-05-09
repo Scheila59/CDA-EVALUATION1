@@ -109,7 +109,7 @@ h1 {
 #affiche {
   width: 80%;
   height: auto;
-  justify-content: center;
+  justify-self: center;
   border: 3px solid black;
   margin-bottom: 5%;
 }
@@ -135,16 +135,24 @@ hr {
 }
 h3 {
   font-family: "Agu Display", serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   margin: 5% 5%;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5%;
+}
 iframe {
   border: black double 5px;
-  /* border-style: none; */
-  width: 90%;
-  margin: 5% 5%;
+  /* width: 80%; */
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .sectionActeurs li {
@@ -163,17 +171,55 @@ ul {
   justify-content: center;
   list-style-type: none;
   gap: 10px;
-  width: 100%;
 }
 li img {
-  border-radius: 60%;
+  border-radius: 70%;
 }
-footer {
+/* animation flip card ------------------------------------------------*/
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
   width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ea7a2a;
+  position: absolute;
+  height: 80%;
+  backface-visibility: hidden; /* Cache la face arrière */
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.flip-card-front img,
+.flip-card-back img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+/* ---------------------------------------------------- */
+footer {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ac4b06;
   color: white;
 }
 footer p {
@@ -185,4 +231,57 @@ footer p {
 }
 footer #btnLogout {
   border: black solid 2px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #login-form,
+  #register-form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  #affiche {
+    width: 50%;
+  }
+  iframe {
+    width: 50%;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .flip-card {
+    width: 300px;
+    height: 300px;
+  }
+  footer #btnLogout {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #title {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  #affiche {
+    width: 40%;
+  }
+  iframe {
+    height: 400px;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer #btnLogout {
+    width: 15%;
+  }
+  #synopsis p,
+  .pourquoi p {
+    font-size: 1.5rem;
+    margin: 5% 20%;
+  }
 }

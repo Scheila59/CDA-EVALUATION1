@@ -108,7 +108,7 @@ gsap.from(selection[1].chars, {
   scrollTrigger: {
     trigger: ".text-reveal2", // Déclencheur : 'élément original
     // markers: true,
-    start: "top 50%", // Affiche les marqueurs de début et de fin
+    start: "top 60%", // Affiche les marqueurs de début et de fin
     end: "bottom 100%",
     scrub: true, // Permet de contrôler l'animation avec le scroll
   },
