@@ -1,0 +1,9 @@
+/* .hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.reveal {
+  max-height: 100vh;
+  transition: max-height 0.5s ease-in-out;
+} */

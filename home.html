@@ -3,52 +3,219 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // verification de l'état de connexion
+      if (
+        window.location.pathname.includes("home.html") &&
+        localStorage.getItem("islogged") !== "true"
+      ) {
+        alert("Vous devez vous connecter pour voir cette page !");
+        window.location.href = "login.html";
+      }
+    </script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css">
+    <link href="https://fonts.cdnfonts.com/css/lion-king" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <!-- <script> Splitting(); </script> -->
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <title>Le roi lion</title>
   </head>
   <body>
     <header>
-      <h1>Le roi lion</h1>
-      <img src="/img/afficheFilm.webp" alt="image des animaux de la savane" />
+      <h1 id="title">Le roi lion</h1>
     </header>
     <main>
-      <h2>Synopsis</h2>
-      <p>
-        Au fond de la savane africaine, tous les animaux célèbrent la naissance
-        de Simba, leur futur roi. Les mois passent. Simba idolâtre son père, le
-        roi Mufasa, qui prend à cœur de lui faire comprendre les enjeux de sa
-        royale destinée. Mais tout le monde ne semble pas de cet avis. Scar, le
-        frère de Mufasa, l'ancien héritier du trône, a ses propres plans. La
-        bataille pour la prise de contrôle de la Terre des Lions est ravagée par
-        la trahison, la tragédie et le drame, ce qui finit par entraîner l'exil
-        de Simba. Avec l'aide de deux nouveaux amis, Timon et Pumbaa, le jeune
-        lion va devoir trouver comment grandir et reprendre ce qui lui revient
-        de droit…
-      </p>
-      <h3>Bande annonce</h3>
-      <iframe
-        width="560"
-        height="315"
-        src="https://youtu.be/EwJ-pPVXnyk?si=p-AxItIDN6exUp-y"
+      <container id="gridAffiche">
+        <img id="affiche" src="/img/afficheFilm.webp" alt="affiche du film" />
+        <div id="synopsis">
+          <h2>Synopsis</h2>
+          <p data-splitting class="text-reveal1">
+            Au fond de la savane africaine, tous les animaux célèbrent la
+            naissance de Simba, leur futur roi. Les mois passent. Simba idolâtre
+            son père, le roi Mufasa, qui prend à cœur de lui faire comprendre
+            les enjeux de sa royale destinée. Mais tout le monde ne semble pas
+            de cet avis. Scar, le frère de Mufasa, l'ancien héritier du trône, a
+            ses propres plans. La bataille pour la prise de contrôle de la Terre
+            des Lions est ravagée par la trahison, la tragédie et le drame, ce
+            qui finit par entraîner l'exil de Simba. Avec l'aide de deux
+            nouveaux amis, Timon et Pumbaa, le jeune lion va devoir trouver
+            comment grandir et reprendre ce qui lui revient de droit…
+          </p>          
+        </div>
+      </container>
+      <hr />
+      <h2>Bande annonce</h2>
+      <div class="video-container">
+        <iframe
+        src="https://www.youtube.com/embed/EwJ-pPVXnyk?si=DVf97SZ0hCpyyZRx"
         title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      <h3>Acteurs</h3>
-      <ul>
-        <li>Simba</li>
-        <li>Nala</li>
-        <li>Mufasa</li>
-        <li>Zazu</li>
-        <li>Timon et pumba</li>
-        <li>Rafiki</li>
-        <li>Scar</li>
-        <li>Banzai, Jenzi et Ed</li>
-      </ul>
-      <h2>Pourquoi ce film préféré ?</h2>
-      <p>Ici écrire pourquoi c’est mon film préféré</p>
+      </div>
+      <section class="sectionActeurs">
+        <h2>Acteurs</h2>
+        <ul>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Simba</h3>
+                  <img src="/img/Simba.webp" alt="Simba" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Voix Dimitri Rougeul</h3>
+                  <img src="/img/voixSimbaDimitri_Rougeul.jpg" alt="Dimitri Rougeul voix française Simba">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Nala</h3>
+                  <img src="/img/Nala.webp" alt="Nala" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Morgan Flahaut</h3>
+                  <img src="/img/VoixNalaMorganFlahaut.jpg" alt="Morgan Flahaut voix française Nala jeune">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Mufasa</h3>
+                  <img src="/img/Mufasa.webp" alt="Mufasa" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Voix Jean Reno</h3>
+                  <img src="/img/voixMufasaJean_Reno_Cannes_2016.jpg" alt="Jean Reno voix française Mufasa">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Zazu</h3>
+                  <img src="/img/zazu2.webp" alt="Zazu" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Voix Michel Prud'homme</h3>
+                  <img src="/img/VoixZazuMichelPrud'homme.png" alt="Michel Prud'homme voix française Zazu">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Timon & Pumba</h3>
+                  <img src="/img/timon-and-pumbaa.webp" alt="Timon & Pumba" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Voix Elias & Puymartin</h3>
+                  <img src="/img/TimonPumbaElias-Puymartin.jpg" alt="Elias/Puymartin voix française Timon & Pumba">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Rafiki</h3>
+                  <img src="/img/rafiki.webp" alt="Rafiki" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Voix Med hondo</h3>
+                  <img src="/img/med-hondoRafiki.jpeg" alt="Med hondo voix française Rafiki">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3>Scar</h3>
+                  <img src="/img/scar-1-the_lion_king.webp" alt="Scar" />
+                </div>
+                <div class="flip-card-back">
+                  <h3>Voix Jean Piat</h3>
+                  <img src="/img/Jean_PIATVoixScar.jpg" alt="Jean Piat voix française Scar">
+                </div>
+              </div>
+            </div>
+          </li>                    
+          <li>
+            Banzai, Jenzi et Ed
+            <img src="/img/les-hyenes.webp" alt="Les hyènes"/>
+          </li>
+        </ul>
+      </section>
+      <hr />
+      <section class="pourquoi">
+        <h2>Pourquoi ce film préféré ?</h2>
+        <p data-splitting class="text-reveal2">
+          Depuis mon enfance, Le Roi Lion occupe une place spéciale dans mon
+          cœur. Ce chef-d'œuvre de Disney n'est pas seulement une histoire
+          captivante, mais une véritable ode à l'amour, au courage et à
+          l'amitié. <br> <br> Dès les premières notes des musiques inoubliables, j'étais
+          transportée dans l'univers de la Terre des Lions. Les chansons
+          rythmaient mon enfance, m'apportant joie et émerveillement. Elles sont
+          encore aujourd'hui gravées en moi, évoquant un sentiment de nostalgie
+          et de bonheur.<br> <br> La relation entre Simba et Mufasa m'a profondément
+          marquée. L'amour et la sagesse que ce père transmet à son fils
+          résonnent encore en moi. La perte tragique de Mufasa fut une des
+          scènes les plus bouleversantes de mon enfance. À cet instant, j'ai
+          ressenti une douleur indescriptible face à cette injustice.
+          Aujourd’hui, étant adulte, cette scène me touche encore plus
+          intensément, notamment parce que j’ai vécu la perte soudaine de mon
+          propre père. Ce passage du film, au-delà de sa tristesse, me rappelle
+          la force des souvenirs et l’importance des leçons qu’un père peut
+          laisser derrière lui.<br> <br> Mais Le Roi Lion n'est pas seulement une
+          histoire tragique. Il est aussi rempli d'humour et de personnages
+          attachants. Zazu, avec son côté coincé et ses répliques mémorables,
+          m'a toujours fait rire. Les hyènes, à la fois terrifiantes et
+          hilarantes, apportaient une dynamique unique au film. Et bien sûr,
+          Timon et Pumba… Leur insouciance et leur joie de vivre étaient un
+          véritable rayon de soleil ! Leur amitié indéfectible avec Simba me
+          touchait profondément, car elle représente le soutien inconditionnel
+          et l'amour sincère que l'on trouve auprès de ceux qui nous aiment
+          vraiment.<br> <br> Enfin, comment ne pas admirer la force et le courage de Nala
+          ? Elle incarne une héroïne inspirante, déterminée et prête à affronter
+          l’adversité pour protéger ceux qu’elle aime. <br> <br> Ainsi, Le Roi Lion n’est
+          pas qu’un simple film d’animation. Il est une véritable leçon de vie,
+          un condensé d’émotions, un rappel que même après les épreuves les plus
+          difficiles, la vie continue et qu'il faut trouver la force de se
+          relever. C'est pour toutes ces raisons que ce film restera à jamais
+          mon préféré
+        </p>    
+            
+      </section>
     </main>
+    <hr />
+    <footer>
+      <p>© 2025 - Mon film préféré par Laura Beaugrand</p>
+      <button id="btnLogout">Se déconnecter</button>
   </body>
 </html>

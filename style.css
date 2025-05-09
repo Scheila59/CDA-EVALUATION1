@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  background: radial-gradient(
+    circle,
+    rgba(216, 206, 167, 1) 0%,
+    rgba(238, 180, 64, 1) 23%,
+    rgba(221, 132, 55, 1) 55%,
+    rgba(194, 66, 41, 1) 78%,
+    rgba(131, 26, 25, 1) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #8b4513;
+  border-radius: 10px;
+  font-family: "Agu Display", serif;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet au survol */
+input:hover {
+  border-color: #d2691e;
+  background-color: #fff8dc;
+}
+
+/* Effet au focus */
+input:focus {
+  outline: none; /* Supprime le contour par défaut */
+  border-color: #ff8c00;
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+/* Style pour les bouton */
+#btnRegister,
+#btnLogin,
+#btnLogout {
+  margin-top: 5%;
+  width: 50%;
+  padding: 10px;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+#btnRegister:hover,
+#btnLogin:hover,
+#btnLogout:hover {
+  background-color: #ff8c00; /* Couleur plus vive */
+}
+h1 {
+  font-family: "Lion kinG", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-top: 2%;
+}
+
+#register-form,
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Agu Display", serif;
+  font-weight: 600;
+  font-size: larger;
+  border-radius: 25%;
+  border: 2px solid black;
+  padding: 5%;
+}
+.pLogin {
+  font-family: "Agu Display", serif;
+  font-weight: 700;
+  font-size: larger;
+  text-align: center;
+  margin-top: 5%;
+}
+#title {
+  font-family: "Lion kinG", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#gridAffiche {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#affiche {
+  width: 80%;
+  height: auto;
+  justify-self: center;
+  border: 3px solid black;
+  margin-bottom: 5%;
+}
+h2 {
+  font-family: "Agu Display", serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 5% 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#synopsis p,
+.pourquoi p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5% 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+hr {
+  width: 80%;
+  border: 1px solid black;
+  margin: 5% auto;
+}
+h3 {
+  font-family: "Agu Display", serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5% 5%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5%;
+}
+iframe {
+  border: black double 5px;
+  /* width: 80%; */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.sectionActeurs li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ul {
+  font-family: "Agu Display", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 10px;
+}
+li img {
+  border-radius: 70%;
+}
+/* animation flip card ------------------------------------------------*/
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 80%;
+  backface-visibility: hidden; /* Cache la face arrière */
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.flip-card-front img,
+.flip-card-back img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+/* ---------------------------------------------------- */
+footer {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ac4b06;
+  color: white;
+}
+footer p {
+  text-align: center;
+  font-family: "Agu Display", serif;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px;
+}
+footer #btnLogout {
+  border: black solid 2px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #login-form,
+  #register-form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  #affiche {
+    width: 50%;
+  }
+  iframe {
+    width: 50%;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .flip-card {
+    width: 300px;
+    height: 300px;
+  }
+  footer #btnLogout {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #title {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  #affiche {
+    width: 40%;
+  }
+  iframe {
+    height: 400px;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer #btnLogout {
+    width: 15%;
+  }
+  #synopsis p,
+  .pourquoi p {
+    font-size: 1.5rem;
+    margin: 5% 20%;
+  }
+}
